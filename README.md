@@ -57,14 +57,20 @@ To evaluate the impact on Total Factor Productivity (`tfprVAKL`), we utilize **O
 * `/scripts/`: Python scripts for data cleaning, merging, rolling average calculations (e.g., 1-year vs 3-year fiscal lag definitions), and econometric modeling using `statsmodels`.
 * `/output/`: Generated analytical datasets (`firm_innovation.xlsx`, `firm_productivity.xlsx`) and regression summary logs.
 * `/docs/`: Conference slide deck and the technical programming language report.
+## 📝 Important Notes for Researchers & Reviewers
 
-### Running the Analysis
-```bash
-# 1. Clone the repository
-git clone [https://github.com/ledangtrungduc/Firm-Innovation.git](https://github.com/ledangtrungduc/Firm-Innovation.git)
+### 1. Data Availability & Reproducibility
+* **Raw Data Access:** Due to the proprietary nature and terms of use of the World Bank Enterprise Survey (WBES) and Quality of Government (QoG) datasets, the raw `.dta` files are not included in this public repository. 
+* **Replication:** To fully replicate this study, researchers must independently obtain the raw datasets from their respective official sources (World Bank and QoG Institute) and place them within the `data/raw/` directory before executing the analysis scripts.
+* **Sample Data (Optional):** A small sample dataset (`sample_data.csv`) is provided for demonstration purposes only, allowing users to test the execution of the modeling scripts without the full dataset.
 
-# 2. Install dependencies
-pip install -r requirements.txt
+### 2. Methodological Clarifications
+* **Oil Price Lag Structures:** * For **Firm Productivity** models, fossil fuel prices and emissions are calculated using a **1-year lag** (based on the fiscal year prior to the survey).
+    * For **Firm Innovation** models, a **3-year rolling average** is applied to align with the survey questions regarding innovation activities "over the last three years."
+* **Handling of Multicollinearity:** During the analysis, to prevent perfect multicollinearity issues caused by the unbalanced panel data, dummy variables for specific years with insufficient observations were systematically excluded and treated as the reference group.
+* **Model Selection:** While the mathematical formulas presented in the documentation include a random effect term ($u_j$) characteristic of Multilevel Logistic Regression, the empirical analysis in Python utilizes **Generalized Estimating Equations (GEE)** with an Exchangeable correlation structure to account for within-country correlation (population-averaged effects).
 
-# 3. Execute the main pipeline
-python scripts/main_analysis.py
+### 3. Contact & Citation
+* **Questions or Feedback:** If you have any questions regarding the methodology, code implementation, or findings, please feel free to open an issue in this repository.
+* **Citation:** If you use this code or reference these findings in your own work, please cite this project as presented at the 10th International Conference on Sustainable Urban Development (ICSUD), 2024.
+
