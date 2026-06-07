@@ -2,6 +2,7 @@
 
 **Presented at:** The 10th International Conference on Sustainable Urban Development (ICSUD), October 03, 2024  
 **Authors:** Dr. Le Van Ha, Le Dang Trung Duc - Speaker, Nguyen Quoc Minh - Co-Author
+
 **Institution:** Vietnamese-German University (VGU) - Global Finance and Economics (GFE)  
 
 ---
