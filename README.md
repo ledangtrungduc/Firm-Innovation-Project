@@ -61,10 +61,10 @@ To evaluate the impact on Total Factor Productivity (`tfprVAKL`), we utilize **O
 ### Running the Analysis
 ```bash
 # 1. Clone the repository
-git clone [https://github.com/yourusername/fossil-fuel-innovation.git](https://github.com/yourusername/fossil-fuel-innovation.git)
+git clone [https://github.com/ledangtrungduc/Firm-Innovation.git](https://github.com/ledangtrungduc/Firm-Innovation.git)
 
 # 2. Install dependencies
-pip install pandas numpy statsmodels openpyxl
+pip install -r requirements.txt
 
 # 3. Execute the main pipeline
 python scripts/main_analysis.py
